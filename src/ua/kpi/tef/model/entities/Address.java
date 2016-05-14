@@ -4,6 +4,13 @@ package ua.kpi.tef.model.entities;
  * Created by Денис on 11.05.2016.
  */
 public class Address {
+    private static final String STREET = "street: ";
+    private static final String BUILDING = ", building: ";
+    private static final String APARTMENT = ", apartment: ";
+    private static final String CITY = "\ncity: ";
+    private static final String ZIP = "\nzip: ";
+
+
     private String zip;
     private String city;
     private String street;
@@ -20,11 +27,33 @@ public class Address {
     }
 
     public String getPostalAddress() {
-        return "POSTAL ADDRESS MIGHT BE HERE. CODE ME!";
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(STREET);
+        sb.append(street);
+        sb.append(BUILDING);
+        sb.append(building);
+        sb.append(APARTMENT);
+        sb.append(apartment);
+        sb.append(CITY);
+        sb.append(city);
+        sb.append(ZIP);
+        sb.append(zip);
+
+        return sb.toString();
     }
 
-    public String getCommonAdress() {
-        return "COMMON ADDRESS MIGHT BE HERE. CODE ME!";
+    public String getCommonAddress() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(STREET);
+        sb.append(street);
+        sb.append(BUILDING);
+        sb.append(building);
+        sb.append(APARTMENT);
+        sb.append(apartment);
+
+        return sb.toString();
     }
 
     public String getZip() {

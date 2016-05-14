@@ -13,9 +13,6 @@ import static ua.kpi.tef.controller.Regex.*;
  * Created by Denis Drabchuck on 11.05.2016.
  */
 public class Controller {
-
-
-
     // Constructor
     Model model;
     View view;
@@ -38,21 +35,66 @@ public class Controller {
     }
 
     private Note handleUserInput(Scanner sc) {
-        String surname = inputStringWithScanner(INPUT + SURNAME, sc, REGEX_NAME);
-        String name = inputStringWithScanner(INPUT + NAME, sc, REGEX_NAME);
-        String middleName = inputStringWithScanner(INPUT + MIDDLE_NAME, sc, REGEX_NAME);
-        String nickname = inputStringWithScanner(INPUT + NICKNAME, sc, REGEX_NICK);
-        String comment = inputStringWithScanner(INPUT + COMMENT, sc, REGEX_COMMENT);
-        String group = inputStringWithScanner(INPUT + GROUP, sc, REGEX_GROUP);
-        String homePhone = inputStringWithScanner(INPUT + HOME_PHONE, sc, REGEX_HOME_PHONE);
-        String mobilePhone = inputStringWithScanner(INPUT + MOBILE_PHONE, sc, REGEX_MOBILE_PHONE);
-        String email = inputStringWithScanner(INPUT + EMAIL, sc, REGEX_MAIL);
-        String skype = inputStringWithScanner(INPUT + SKYPE, sc, REGEX_SKYPE);
-        String zip = inputStringWithScanner(INPUT + ZIP, sc, REGEX_ZIP);
-        String city = inputStringWithScanner(INPUT + CITY, sc, REGEX_CITY);
-        String street = inputStringWithScanner(INPUT + STREET, sc, REGEX_STREET);
-        String building = inputStringWithScanner(INPUT + BUILDING, sc, REGEX_BUILDING);
-        String apartment = inputStringWithScanner(INPUT + APARTMENT, sc, REGEX_APARTMENT);
+        String surname =
+                inputStringWithScanner(INPUT + SURNAME +
+                        EXAMPLE + SURNAME_EXAMPLE,
+                        sc, REGEX_NAME);
+        String name =
+                inputStringWithScanner( INPUT + NAME +
+                        EXAMPLE + NAME_EXAMPLE,
+                        sc, REGEX_NAME);
+        String middleName =
+                inputStringWithScanner( INPUT + MIDDLE_NAME +
+                        EXAMPLE + MIDDLE_NAME_EXAMPLE,
+                        sc, REGEX_NAME);
+        String nickname =
+                inputStringWithScanner(INPUT + NICKNAME +
+                        EXAMPLE + NICKNAME_EXAMPLE,
+                        sc, REGEX_NICK);
+        String comment =
+                inputStringWithScanner(INPUT + COMMENT +
+                        EXAMPLE + COMMENT_EXAMPLE,
+                        sc, REGEX_COMMENT);
+        String group =
+                inputStringWithScanner(INPUT + GROUP +
+                        EXAMPLE + GROUP_EXAMPLE,
+                        sc, REGEX_GROUP);
+        String homePhone =
+                inputStringWithScanner(INPUT + HOME_PHONE +
+                        EXAMPLE + HOME_PHONE_EXAMPLE,
+                        sc, REGEX_HOME_PHONE);
+        String mobilePhone =
+                inputStringWithScanner( INPUT + MOBILE_PHONE +
+                        EXAMPLE + MOBILE_PHONE_EXAMPLE,
+                        sc, REGEX_MOBILE_PHONE);
+        String email =
+                inputStringWithScanner( INPUT + EMAIL +
+                        EXAMPLE + EMAIL_EXAMPLE,
+                        sc, REGEX_MAIL);
+        String skype =
+                inputStringWithScanner( INPUT + SKYPE +
+                        EXAMPLE + SKYPE_EXAMPLE,
+                        sc, REGEX_SKYPE);
+        String zip =
+                inputStringWithScanner( INPUT + ZIP +
+                        EXAMPLE + ZIP_EXAMPLE,
+                        sc, REGEX_ZIP);
+        String city =
+                inputStringWithScanner( INPUT + CITY +
+                        EXAMPLE + CITY_EXAMPLE,
+                        sc, REGEX_CITY);
+        String street =
+                inputStringWithScanner( INPUT + STREET +
+                        EXAMPLE + STREET_EXAMPLE,
+                        sc, REGEX_STREET);
+        String building =
+                inputStringWithScanner( INPUT + BUILDING +
+                        EXAMPLE + BUILDING_EXAMPLE,
+                        sc, REGEX_BUILDING);
+        String apartment =
+                inputStringWithScanner( INPUT + APARTMENT +
+                        EXAMPLE + APARTMENT,
+                        sc, REGEX_APARTMENT);
 
         return new Note(name, surname, middleName, nickname, comment,
                 group, homePhone, mobilePhone, email, skype, zip, city,

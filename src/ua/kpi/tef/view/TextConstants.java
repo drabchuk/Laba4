@@ -37,4 +37,22 @@ public interface TextConstants {
     String UPDATE_DATE = "update";
     String COLON = ": ";
 
+    String EXAMPLE = "\nExample: ";
+
+    String SURNAME_EXAMPLE = "Sparrow";
+    String NAME_EXAMPLE = "Jack";
+    String MIDDLE_NAME_EXAMPLE = "Jackovich";
+    String NICKNAME_EXAMPLE = "pirat123";
+    String COMMENT_EXAMPLE = "no comments";
+    String GROUP_EXAMPLE = "First | Second | Third";
+    String HOME_PHONE_EXAMPLE = "+38(095)123-45-67";
+    String MOBILE_PHONE_EXAMPLE = "+38(095)123-45-67";
+    String EMAIL_EXAMPLE = "nick@mail.com";
+    String SKYPE_EXAMPLE = "sky123";
+    String ZIP_EXAMPLE = "12345";
+    String CITY_EXAMPLE = "Kiev";
+    String STREET_EXAMPLE = "Ivana Franka";
+    String BUILDING_EXAMPLE = "5";
+    String APARTMENT_EXAMPLE = "202";
+
 }

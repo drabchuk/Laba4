@@ -8,10 +8,10 @@ public interface Regex {
     // The Regex
 
     // «Denis»
-    String REGEX_NAME = "^[A-Z][a-zA-Z'-]{3,30}$";
+    String REGEX_NAME = "^[A-Z][a-zA-Z'-]{1,30}$";
 
     // «Nick-name1»
-    String REGEX_NICK = "^[A-Za-z1-9_'.]{3,30}$";
+    String REGEX_NICK = "^[A-Za-z1-9_'.]{1,30}$";
 
     // «bla - bla - bla»
     String REGEX_COMMENT = ".*";
@@ -20,10 +20,11 @@ public interface Regex {
     String REGEX_GROUP = "^((F|f)irst)|((S|s)econd)|((T|t)hird)&";
 
     // «+38(044)555-55-55»
-    String REGEX_HOME_PHONE =  "^\\+\\d{2}\\(\\d{3}\\)\\d{3}-\\d{2}-\\d{2}$";
+    //String REGEX_HOME_PHONE =  "^\\+\\d{2}\\(\\d{3}\\)\\d{3}-\\d{2}-\\d{2}$";
+    String REGEX_HOME_PHONE =  "^\\+?\\d{2}\\(?\\d{3}\\)?\\d{3}-?\\d{2}-?\\d{2}$";
 
     // «+38(044)555-55-55»
-    String REGEX_MOBILE_PHONE =  "^\\+\\d{2}\\(\\d{3}\\)\\d{3}-\\d{2}-\\d{2}$";
+    String REGEX_MOBILE_PHONE =  "^\\+?\\d{2}\\(?\\d{3}\\)?\\d{3}-?\\d{2}-?\\d{2}$";
 
 
 

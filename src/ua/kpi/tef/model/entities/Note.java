@@ -23,27 +23,6 @@ public class Note {
 
     //Constructors
 
-
-    public Note(String name, String surname, String middleName,
-                String nickname, String comment, Groups group,
-                String homePhone, String mobilePhone, String email,
-                String skype, Address address, Date createDate,
-                Date updateDate) {
-        this.name = name;
-        this.surname = surname;
-        this.middleName = middleName;
-        this.nickname = nickname;
-        this.comment = comment;
-        this.group = group;
-        this.homePhone = homePhone;
-        this.mobilePhone = mobilePhone;
-        this.email = email;
-        this.skype = skype;
-        this.address = address;
-        this.createDate = createDate;
-        this.updateDate = updateDate;
-    }
-
     public Note(String name, String surname, String middleName,
                 String nickname, String comment, String group,
                 String homePhone, String mobilePhone, String email,
@@ -55,17 +34,13 @@ public class Note {
         this.nickname = nickname;
         this.comment = comment;
         this.group = defineGroup(group);
-        this.homePhone = homePhone;
-        this.mobilePhone = mobilePhone;
+        setHomePhone(homePhone);
+        setMobilePhone(mobilePhone);
         this.email = email;
         this.skype = skype;
         this.address = new Address(zip, city, street, building, apartment);
-        this.createDate = getDate();
+        this.createDate = new Date();
         this.updateDate = this.createDate;
-    }
-
-    private Date getDate() {
-        return new Date();
     }
 
     private Groups defineGroup(String name) {
@@ -78,16 +53,15 @@ public class Note {
         return null;
     }
 
+    //Custom methods
+
     /**
      * This method returns a full name
      *
      * @return "Surname N. M." (example)
      * */
-
-    //Custom methods
-
     public String getFullName() {
-        StringBuffer fn = new StringBuffer(name.length() + 6);
+        StringBuilder fn = new StringBuilder(name.length() + 6);
         fn.append(surname);
         fn.append(" ");
         fn.append(name.charAt(0));
@@ -102,7 +76,7 @@ public class Note {
     }
 
     public String getCommonAddress() {
-        return this.address.getCommonAdress();
+        return this.address.getCommonAddress();
     }
 
     //Getters and Setters
@@ -161,7 +135,7 @@ public class Note {
     }
 
     public void setHomePhone(String homePhone) {
-        this.homePhone = homePhone;
+        this.homePhone = toThePhoneTemplate(homePhone);
     }
 
     public String getMobilePhone() {
@@ -169,7 +143,7 @@ public class Note {
     }
 
     public void setMobilePhone(String mobilePhone) {
-        this.mobilePhone = mobilePhone;
+        this.mobilePhone = toThePhoneTemplate(mobilePhone);
     }
 
     public String getEmail() {
@@ -210,5 +184,23 @@ public class Note {
 
     public void setUpdateDate(Date updateDate) {
         this.updateDate = updateDate;
+    }
+
+    private String toThePhoneTemplate(String phone) {
+        StringBuilder sb = new StringBuilder(phone);
+
+        insertIfNecessary(sb, 0, '+');
+        insertIfNecessary(sb, 3, '(');
+        insertIfNecessary(sb, 7, ')');
+        insertIfNecessary(sb, 11, '-');
+        insertIfNecessary(sb, 14, '-');
+
+        return sb.toString();
+    }
+
+    private void insertIfNecessary(StringBuilder sb, int position, char c) {
+        if(sb.charAt(position) != c) {
+            sb.insert(position, c);
+        }
     }
 }

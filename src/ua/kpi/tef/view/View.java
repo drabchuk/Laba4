@@ -9,7 +9,7 @@ import static ua.kpi.tef.view.TextConstants.*;
  */
 public class View {
 
-    public void printMessage(String message){
+    public void printMessage(String  message){
         System.out.println(message);
     }
 
@@ -48,6 +48,9 @@ public class View {
         printMessages(APARTMENT, COLON, note.getAddress().getApartment());
         printMessages(CREATE_DATE, COLON, note.getCreateDate().toString());
         printMessages(UPDATE_DATE, COLON, note.getUpdateDate().toString());
+        printMessagesLn();
+        printMessages(COMMON_ADDRESS, COLON, note.getCommonAddress());
+        printMessages(POSTAL_ADDRESS, COLON, note.getPostalAddress());
     }
 
 }
